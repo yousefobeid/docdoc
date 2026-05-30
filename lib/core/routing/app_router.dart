@@ -1,5 +1,5 @@
 import 'package:docdoc/core/routing/routes.dart';
-import 'package:docdoc/features/login/ui/widgets/login_screen.dart';
+import 'package:docdoc/features/login/ui/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
