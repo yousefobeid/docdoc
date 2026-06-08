@@ -15,6 +15,7 @@ class AppTextFormField extends StatelessWidget {
   final Color? fillColor;
   final TextEditingController? controller;
   final Function(String?) validator;
+  final FocusNode? focusNode;
   const AppTextFormField({
     super.key,
     required this.hintText,
@@ -28,11 +29,16 @@ class AppTextFormField extends StatelessWidget {
     this.fillColor,
     this.controller,
     required this.validator,
+    this.focusNode,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: ColorsManger.mainBlue,
+      cursorWidth: 1.3,
+      cursorHeight: 20.h,
+      focusNode: focusNode,
       controller: controller,
       decoration: InputDecoration(
         isDense: true,
@@ -48,16 +54,13 @@ class AppTextFormField extends StatelessWidget {
         enabledBorder:
             enabledBorder ??
             OutlineInputBorder(
-              borderSide: BorderSide(
-                color: ColorsManger.lighterGrey,
-                width: 1.3,
-              ),
+              borderSide: BorderSide(color: ColorsManger.lightGray, width: 1.3),
               borderRadius: BorderRadius.circular(16),
             ),
         hintStyle: hintStyle ?? TextStyles.font14LightGreyRegular,
         hintText: hintText,
         suffixIcon: suffixIcon,
-        fillColor: fillColor ?? ColorsManger.moreLightGrey,
+        fillColor: fillColor ?? ColorsManger.moreLightGray,
         filled: true,
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),

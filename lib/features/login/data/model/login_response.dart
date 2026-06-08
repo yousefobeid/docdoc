@@ -8,9 +8,10 @@ class LoginResponse {
   UserDate? userDate;
   int? code;
   bool? status;
-  LoginResponse({this.message, this.code, this.status});
+  LoginResponse({this.message, this.code, this.status, this.userDate});
   factory LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);
+  Map<String, dynamic> toJson() => _$LoginResponseToJson(this);
 }
 
 @JsonSerializable()
@@ -21,4 +22,5 @@ class UserDate {
   UserDate({this.token, this.name});
   factory UserDate.fromJson(Map<String, dynamic> json) =>
       _$UserDateFromJson(json);
+  Map<String, dynamic> toJson() => _$UserDateToJson(this);
 }

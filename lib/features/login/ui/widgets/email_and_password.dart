@@ -3,7 +3,6 @@ import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/login/ui/widgets/password_validation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../core/helpers/spaceing.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 
@@ -21,17 +20,26 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
   bool hasNumber = false;
   bool hasSpecialCharacter = false;
   bool hasMinLength = false;
+  bool showPasswordValidation = false;
   late TextEditingController passwordController;
+  late FocusNode passwordFocusNode;
   @override
   void initState() {
     passwordController = context.read<LoginCubit>().passwordController;
     setUpPasswordControllerListener();
+    passwordFocusNode = FocusNode();
+    passwordFocusNode.addListener(() {
+      setState(() {
+        showPasswordValidation = passwordFocusNode.hasFocus;
+      });
+    });
     super.initState();
   }
 
   @override
   void dispose() {
     passwordController.dispose();
+    passwordFocusNode.dispose();
     super.dispose();
   }
 
@@ -68,6 +76,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           ),
           verticalSpace(18),
           AppTextFormField(
+            focusNode: passwordFocusNode,
             controller: context.read<LoginCubit>().passwordController,
             hintText: 'Password',
             validator: (value) {
@@ -88,12 +97,15 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             isObscureText: isObscureText,
           ),
           verticalSpace(24),
-          PasswordValidation(
-            hasLowercase: hasLowercase,
-            hasUppercase: hasUppercase,
-            hasNumber: hasNumber,
-            hasSpecialCharacter: hasSpecialCharacter,
-            hasMinLength: hasMinLength,
+          Visibility(
+            visible: showPasswordValidation,
+            child: PasswordValidation(
+              hasLowercase: hasLowercase,
+              hasUppercase: hasUppercase,
+              hasNumber: hasNumber,
+              hasSpecialCharacter: hasSpecialCharacter,
+              hasMinLength: hasMinLength,
+            ),
           ),
         ],
       ),
