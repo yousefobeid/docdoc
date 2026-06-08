@@ -27,7 +27,7 @@ class AppTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return ElevatedButton(
       onPressed: onPressed,
       style: ButtonStyle(
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(

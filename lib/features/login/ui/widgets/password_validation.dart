@@ -39,7 +39,7 @@ class PasswordValidation extends StatelessWidget {
   Widget buildValidationRow(String text, bool hasValidated) {
     return Row(
       children: [
-        CircleAvatar(radius: 2.5, backgroundColor: ColorsManger.grey),
+        CircleAvatar(radius: 2.5, backgroundColor: ColorsManger.gray),
         horizontalSpace(6),
         Text(
           text,
@@ -47,7 +47,7 @@ class PasswordValidation extends StatelessWidget {
             decoration: hasValidated ? TextDecoration.lineThrough : null,
             decorationColor: Colors.green,
             decorationThickness: 2,
-            color: hasValidated ? ColorsManger.grey : ColorsManger.darkBlue,
+            color: hasValidated ? ColorsManger.gray : ColorsManger.darkBlue,
           ),
         ),
       ],

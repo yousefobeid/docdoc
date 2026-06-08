@@ -18,6 +18,10 @@ class DocApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Doc App',
         theme: ThemeData(
+          textSelectionTheme: TextSelectionThemeData(
+            selectionColor: ColorsManger.mainBlue.withOpacity(0.3),
+            selectionHandleColor: ColorsManger.mainBlue,
+          ),
           primaryColor: ColorsManger.mainBlue,
           scaffoldBackgroundColor: Colors.white,
         ),
@@ -27,3 +31,5 @@ class DocApp extends StatelessWidget {
     );
   }
 }
+//ex.
+//Theme.of(context).textTheme.titleLarge
