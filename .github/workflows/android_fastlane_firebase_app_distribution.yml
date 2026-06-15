@@ -18,11 +18,13 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: true
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: stable
+          channel: stable
+          cache: true
 
       - name: Install Dependencies
         run: flutter pub get
