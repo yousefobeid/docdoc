@@ -11,7 +11,7 @@ platform :android do
          testers: "yousefobid521@gmail.com",
          android_artifact_type: 'APK',
          android_artifact_path:'../build/app/outputs/flutter-apk/app-production-release.apk',
-         release_notes: "New Build From FastLane To FireBase App-Distribution"
+         release_notes: "Test Action In Git Hub And Send APK in the FireBase "
    )
   end
 end
