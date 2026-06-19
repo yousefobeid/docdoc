@@ -32,13 +32,13 @@ class DoctorsBlueContainer extends StatelessWidget {
                   style: TextStyles.font17WhiteMedium,
                   // textAlign: TextAlign.start,
                 ),
-                verticalSpace(10),
+                verticalSpace(16),
                 Expanded(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24.r),
+                        borderRadius: BorderRadius.circular(48.r),
                       ),
                     ),
                     onPressed: () {},
