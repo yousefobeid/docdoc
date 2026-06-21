@@ -20,7 +20,7 @@ class DoctorsSpecialityListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height * 0.092,
+     height: 80.h,
       child: ListView.builder(
         itemCount: specializationDataList.length,
         scrollDirection: Axis.horizontal,
