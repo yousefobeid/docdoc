@@ -19,7 +19,7 @@ class UserDate {
   String? token;
   @JsonKey(name: "username")
   String? name;
-  UserDate({this.token, this.name});
+  UserDate({required this.token, this.name});
   factory UserDate.fromJson(Map<String, dynamic> json) =>
       _$UserDateFromJson(json);
   Map<String, dynamic> toJson() => _$UserDateToJson(this);
