@@ -18,7 +18,7 @@ void main() async {
 
 Future<void> checkUserIfLoggedIn() async {
   String? token;
-  token = await SharedPrefHelper.getString(SharedPrefKey.userToken);
+  token = await SharedPrefHelper.getSecuredString(SharedPrefKey.userToken);
   if (!token.isNullOrEmpty()) {
     isLoggedIn = true;
   } else {
