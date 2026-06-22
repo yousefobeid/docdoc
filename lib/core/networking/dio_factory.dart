@@ -47,7 +47,7 @@ class DioFactory {
     dio!.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) async {
-          final token = await SharedPrefHelper.getString(
+          final token = await SharedPrefHelper.getSecuredString(
             SharedPrefKey.userToken,
           );
 
