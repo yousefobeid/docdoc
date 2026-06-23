@@ -24,8 +24,10 @@ Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
       'status': instance.status,
     };
 
-UserDate _$UserDateFromJson(Map<String, dynamic> json) =>
-    UserDate(token: json['token'] as String, name: json['username'] as String?);
+UserDate _$UserDateFromJson(Map<String, dynamic> json) => UserDate(
+  token: json['token'] as String?,
+  name: json['username'] as String?,
+);
 
 Map<String, dynamic> _$UserDateToJson(UserDate instance) => <String, dynamic>{
   'token': instance.token,

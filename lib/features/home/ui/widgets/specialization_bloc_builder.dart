@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/helpers/spaceing.dart';
 import '../../logic/home_cubit.dart';
 import '../../logic/home_state.dart';
-import 'doctor_list_view.dart';
-import 'doctor_speciality_see_all.dart';
-import 'doctors_speciality_list_view.dart';
+import 'speciality_list_view.dart';
 
-class SetUpSpecializationAndDoctorsBlocBuilder extends StatelessWidget {
-  const SetUpSpecializationAndDoctorsBlocBuilder({super.key});
+class SpecializationBlocBuilder extends StatelessWidget {
+  const SpecializationBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +20,8 @@ class SetUpSpecializationAndDoctorsBlocBuilder extends StatelessWidget {
           specializationLoading: () {
             return setUploading();
           },
-          specializationSuccess: (specializationsResponseModel) {
-            var specializationList =
-                specializationsResponseModel.specializationDataList;
+          specializationSuccess: (specializationsDataList) {
+            var specializationList = specializationsDataList;
             return setUpSuccess(specializationList);
           },
           specializationFailure: (err) {
@@ -47,21 +43,8 @@ class SetUpSpecializationAndDoctorsBlocBuilder extends StatelessWidget {
   }
 
   Widget setUpSuccess(specializationList) {
-    return Expanded(
-      child: Column(
-        children: [
-          DoctorsSpecialityListView(
-            specializationDataList: specializationList ?? [],
-          ),
-          verticalSpace(10.h),
-          DoctorSpecialitySeeAll(
-            text: 'Recommendation Doctor',
-            subText: 'See All',
-          ),
-          verticalSpace(10.h),
-          DoctorListView(doctorsList: specializationList?[0]?.doctorsList),
-        ],
-      ),
+    return DoctorsSpecialityListView(
+      specializationDataList: specializationList ?? [],
     );
   }
 
