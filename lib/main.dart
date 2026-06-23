@@ -7,3 +7,4 @@ void main() {
   setUpGetIt();
   runApp(DocApp(appRouter: AppRouter()));
 }
+
