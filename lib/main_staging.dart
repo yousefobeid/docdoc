@@ -10,6 +10,7 @@ import 'core/helpers/constants.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
  await setUpGetIt();
+  await SharedPrefHelper.clearSecureStorgeOnFirstRun();
   //To fix Texts being hidden bug in flutter_screenUtil in release mode.
   await ScreenUtil.ensureScreenSize();
   await checkUserIfLoggedIn();
