@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'constants.dart';
+
 class SharedPrefHelper {
   SharedPrefHelper._();
 
@@ -9,7 +11,6 @@ class SharedPrefHelper {
 
   static Future<SharedPreferences> get _prefs async =>
       SharedPreferences.getInstance();
-
 
   static Future<void> setData(String key, dynamic value) async {
     final prefs = await _prefs;
@@ -87,5 +88,14 @@ class SharedPrefHelper {
     debugPrint('SecureStorage -> clearAllSecuredData');
 
     await _secureStorage.deleteAll();
+  }
+
+  static Future<void> clearSecureStorgeOnFirstRun() async {
+    final pref = await _prefs;
+    final isFirstRun = pref.get(SharedPrefKey.isFirstRun);
+    if (isFirstRun == null) {
+      await _secureStorage.deleteAll();
+      await pref.setBool(SharedPrefKey.isFirstRun, true);
+    }
   }
 }
