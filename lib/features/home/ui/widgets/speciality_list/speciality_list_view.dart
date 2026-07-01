@@ -7,23 +7,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../data/model/specialization_data_model.dart';
-import '../../data/model/specializations_response_model.dart';
-import 'doctors_speciality_list_view_item.dart';
+import '../../../data/model/specialization_data_model.dart';
+import '../../../data/model/specializations_response_model.dart';
+import 'speciality_list_view_item.dart';
 
-class DoctorsSpecialityListView extends StatefulWidget {
+class SpecialityListView extends StatefulWidget {
   final List<SpecializationData?> specializationDataList;
-  const DoctorsSpecialityListView({
+  const SpecialityListView({
     super.key,
     required this.specializationDataList,
   });
 
   @override
-  State<DoctorsSpecialityListView> createState() =>
-      _DoctorsSpecialityListViewState();
+  State<SpecialityListView> createState() =>
+      _SpecialityListViewState();
 }
 
-class _DoctorsSpecialityListViewState extends State<DoctorsSpecialityListView> {
+class _SpecialityListViewState extends State<SpecialityListView> {
   var selectedSpecializationIndex = 0;
   @override
   Widget build(BuildContext context) {

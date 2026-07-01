@@ -12,3 +12,24 @@ abstract class HomeApiService {
   @GET(ApiConstants.specializationEP)
 Future<SpecializationResponseModel> getSpecialization();
 }
+
+
+// ex.
+// class HomeApiService {
+//
+//   final Dio dio;
+//
+//   HomeApiService(this.dio);
+//
+//   Future<SpecializationResponseModel> getSpecialization() async {
+//
+//     final response = await dio.get(
+//       "https://api.com/api/specialization",
+//     );
+//
+//     return SpecializationResponseModel.fromJson(
+//       response.data,
+//     );
+//   }
+//
+// }

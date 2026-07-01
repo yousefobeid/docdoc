@@ -2,9 +2,9 @@ import 'package:docdoc/features/home/data/model/specializations_response_model.d
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/helpers/spaceing.dart';
-import '../../../../core/theming/styles.dart';
-import '../../data/model/doctors_info_model.dart';
+import '../../../../../core/helpers/spaceing.dart';
+import '../../../../../core/theming/styles.dart';
+import '../../../data/model/doctors_info_model.dart';
 
 class DoctorsListViewItem extends StatelessWidget {
   final Doctors? doctorsModel;

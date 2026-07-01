@@ -4,7 +4,7 @@ import 'package:docdoc/features/home/data/model/specializations_response_model.d
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../data/model/doctors_info_model.dart';
+import '../../../data/model/doctors_info_model.dart';
 import 'doctors_list_view_item.dart';
 
 class DoctorListView extends StatelessWidget {

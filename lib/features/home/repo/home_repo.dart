@@ -6,7 +6,7 @@ import '../../../core/networking/api_result.dart';
 class HomeRepo {
   final HomeApiService _homeApiService;
   HomeRepo(this._homeApiService);
-  Future<ApiResult<SpecializationResponseModel>> getSpecialization() async {
+  Future<ApiResult<SpecializationResponseModel>> getSpecializationResponse() async {
     try {
       final response = await _homeApiService.getSpecialization();
       return ApiResult.success(response);
