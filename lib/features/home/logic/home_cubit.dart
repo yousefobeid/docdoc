@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:docdoc/core/helpers/extension.dart';
 import 'package:docdoc/core/networking/api_result.dart';
 import 'package:docdoc/features/home/data/model/doctors_info_model.dart';
@@ -13,12 +13,12 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this._homeRepo) : super(HomeState.initial());
   void getSpecialization() async {
     emit(HomeState.specializationLoading());
-    final result = await _homeRepo.getSpecialization();
+    final result = await _homeRepo.getSpecializationResponse();
     result.when(
       success: (specializationResponseModel) {
         specializationDataList =
             specializationResponseModel.specializationDataList ?? [];
-          getDoctorsList(specializationId: specializationDataList?.first?.id );
+        getDoctorsList(specializationId: specializationDataList?.first?.id);
         emit(
           HomeState.specializationSuccess(
             specializationResponseModel.specializationDataList,

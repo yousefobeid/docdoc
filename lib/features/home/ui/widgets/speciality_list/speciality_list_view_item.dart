@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/helpers/spaceing.dart';
-import '../../../../core/theming/app_colors.dart';
-import '../../../../core/theming/styles.dart';
-import '../../data/model/specialization_data_model.dart';
+import '../../../../../core/helpers/spaceing.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/styles.dart';
+import '../../../data/model/specialization_data_model.dart';
 
 class SpecialityListViewItem extends StatelessWidget {
   final SpecializationData? specializationData;
